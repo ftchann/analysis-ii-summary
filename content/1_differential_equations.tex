@@ -9,21 +9,33 @@
     
     Eine Differentialgleichung heisst \textbf{linear}, falls jeder Term $y$, $y'$, $y''$ usw. nur linear vorkommt. Wichtig: Falls $y_1(x)$ und $y_2(x)$ Lösungen der selben Differentialgleichung sind, dass ist auch die Linearkombination $ay_1(x) + by_2(x)$.\\
     
-    Eine Differentialgleichung heisst \textbf{homogen}, falls keine Terme vorkommen, die rein von den Funktionsvariablen abhängen (also kein $y$, $y''$, ... enthalten). Sonst heisst die Gleichung \textbf{inhomogen}.
+    Eine Differentialgleichung heisst \textbf{homogen}, falls keine Terme vorkommen, die rein von den Funktionsvariablen x abhängen (also kein $x$, $\sin(x)$, ... enthalten). Sonst heisst die Gleichung \textbf{inhomogen}.
 \end{Definition}
 
 \begin{Definition}{Anfangswertproblem}{}
     Ein \textbf{Anfangswertproblem} $n$-ter Ordnung ist eine gewöhnliche Differentialgleichung $n$-ter Ordnung zusammen mit $n$ Anfangsbedingungen.
 \end{Definition}
 
-\begin{Satz}{Grundprinzip für lineare, inhomogene Differenzialgleichungen}{}
+
+\begin{Satz}{Hauptsatz lineare Differentialgleichung}{}
+	Sei $I \subset \mathbb{R}$ an offenes Interval and $k \geq 1$ eine ganze Zahl,\\
+	$y^{(k)} + a_{k-1}y^{(k-1)} +... \ + a_1y' + a_0 y = 0$ eine homogene lineare ODE über $I$ mit stetigen Koeffizienten.
+	Dann sind: 
+	\begin{enumerate}
+		\item Dann ist die Menge $S$ bestehend aus k-fach differenzierbaren Lösungen $f: I \rightarrow \mathbb{C}$ ein komplexer Vektorraum der Grösse k.
+		\item Für alle Anfangswerte $(y_0, ... \ , y_{k-1}) \in \mathbb{C}^k$ gibt es eine eindeutige Lösung $f \in \mathbb{C}$ so dass $f(x_0) = y_0, f'(x_0) = y_1, ... \ , f^{(k-1)} = y_{k-1}$
+		\item Sei $b$ stetig über I. Dann existiert eine Lösung $f_p$ für das inhomogene ODE und $S_b = f + f_p$
+		\item Für alle Anfangswerte ist die Lösungen eindeutig.
+		\item \textcolor{red}{Wenn $b \neq 0, S_b$ ist kein Vektorraum} 
+	\end{enumerate}
+\end{Satz}
+\begin{Satz}{Grundprinzip für lineare, inhomogene Differentialgleichungen}{}
     Die allgemeine Lösung einer linearen, inhomogenen Differentialgleichung hat die Form
     \[
         \underbrace{y(x)}_{\text{Gesamtlösung}}
         = \underbrace{y_{hom}(x)}_{\text{allg. homogene Lösung}}
         + \underbrace{y_p(x)}_{\text{partikuläre Lösung}}
     \]
-    
 \end{Satz}
 
 \begin{Rezept}{Separation der Variablen}{}
@@ -140,7 +152,7 @@
 		\end{equation*}
 		nicht verschwindet, denn aus LinAlg wissen wir, dass genau dann eine eindeutige Lösung existiert.
 		\item  Wir finden nun $C_1$ und $C_2$ und somit $y_p(x)$ entweder durch
-		\begin{enumerate}[(a)]
+		\begin{enumerate}
 			\item Inversion der Matrix \begin{equation*}
 			\vekk{C_1'(x)}{C_2'(x)} = \frac{1}{y_1(x)y_2'(x)-y_2(x)y_1'(x)} \begin{pmatrix}
 			y_2'(x) & -y_2(x)\\-y_1'(x) &y_1(x)
@@ -305,14 +317,3 @@
 	\end{enumerate}
 \end{Rezept}
 
-%\subsection{Ordinary Differential Equations}
-
-%\subsection{Linear Differential Equations}
-
-%\subsubsection{Linear Differential Equations of Order 1}
-
-%\subsubsection{Linear Differential Equations with constant coefficients}
-
-%with multiple roots, without multiple roots\\
-
-%rezept von übung

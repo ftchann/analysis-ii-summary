@@ -5,13 +5,15 @@
 \usepackage{amssymb,amsmath,amsthm,amsfonts}
 \usepackage{graphicx}
 \usepackage{xcolor}
-\usepackage{enumerate}
 \usepackage[most]{tcolorbox}
 \usepackage{physics}
 \usepackage{multicol}
 \usepackage{tabularx}
 \usepackage{relsize}
 \usepackage{hyperref}
+
+\usepackage{enumitem}
+\usepackage{longtable}
 
 \title{Analysis II}
 \author{}
@@ -21,7 +23,7 @@
 \input{math-lean.sty}
 
 % lean settings
-\let\olditemize=\itemize \let\endolditemize=\enditemize \renewenvironment{itemize}{\olditemize \itemsep0em}{\endolditemize}
+% \let\olditemize=\itemize \let\endolditemize=\enditemize \renewenvironment{itemize}{\olditemize \itemsep0em}{\endolditemize}
 
 \begin{document}
 
@@ -31,7 +33,6 @@
 \input{content/3_integration_in_rd.tex} 
 \input{content/4_tricks.tex}
 
-\clearpage
 \input{content/5_integrals.tex}
 
 \end{document}

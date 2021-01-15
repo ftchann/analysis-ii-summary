@@ -6,7 +6,7 @@ Analog zum Integrieren über Normalbereich:
 \[ \text{Vol}(D) = \int_D 1 ~ dX = \underbrace{\int \!\! \int \ldots \int}_{n} 1 ~ dx_1 \ldots dx_{n-1} dx_n,  ~~~~ D \subseteq \R^n\]
 \end{Rezept}
 
-\subsubsection{Normalbereiche in $\R^2$}
+\subsubsection{Normalbereiche in \texorpdfstring{$R^2$}{R2}}
 
 \begin{Definition}{Normalbereiche in zwei Dimensionen}{}
 Sei $\Omega$ eine beschränkte Teilmenge von $\R^2$. $\Omega$ heisst \textbf{y-Normalbereich}, falls sich $\Omega$ wie folgt darstellen lässt:
@@ -65,11 +65,31 @@ Idee: Beziehung Linienintegral und Flächenintegral.
 		\int_{\gamma=\partial C} \vec{v} \cdot d\vec{s} = 
 		\int_C \left(\frac{\partial v_2}{\partial x} - \frac{\partial v_1}{\partial y}\right) dxdy
 	\]
+	Wenn die Region durch eine Vereinigung von Kurven eingeschlossen ist:\\
+	\[
+		\displaystyle\int_X\left(\frac{\partial f_2}{\partial x}-\frac{\partial f_1}{\partial y}\right)dxdy = \sum_{i=1}^k\int_{\gamma_i}f\cdot d\vec s	
+	\]
 	\textbf{Bemerkung I}: Der Rand $\partial C$ muss im positiven mathematischen Sinn durchlaufen werden. D.h. das Gebiet $C$ muss jeweils links vom Rand sein, für ein Beobachter, der auf dem Rand läuft.\\
 	
 	\textbf{Bemerkung II}: Der Satz von Green ist die zweidimensionale Version des Satzes von Stokes
 	
 	\textbf{Bemerkung III}: $\gamma=\partial C$ muss den gesamten Rand abdecken. Evtl. Gebietsadditivität nutzen und gewisse Bereiche (Ränder) einzeln parametrisieren.
+\end{Satz}
+
+\begin{Definition}{Divergence}{}
+	Sie $f: \mathbb{R}^n \rightarrow \mathbb{R}^n$ ein Vektorfeld, die divergence ist
+	\[
+		\text{div} f = \partial x_1 + ... + \partial x_n
+	\]
+\end{Definition}
+
+\begin{Satz}{Green andere Formen}{}
+	\[
+	\int_X \int	div f dx dy = \int_{\partial X} f_0 d\vec n
+	\]
+	\[
+		\int_X \int	curl f dx dy = \int_{\partial X} \vec f \vec ds
+	\]
 \end{Satz}
 
 \begin{Rezept}[label=GreenFlaechen]{Flächen berechnen mit Satz von Green}{}
@@ -101,7 +121,7 @@ Idee: Beziehung Linienintegral und Flächenintegral.
 	\]
 \end{Rezept}
 
-\begin{Satz}{Masse und Schwerpunkt}{}
+\begin{Satz}{Masse und Schwerpunkt und Oberfläche}{}
 	Sei $\Omega$ ein zweidimensionales Gebiet mit Massendichte $\rho(x, y)$, welche die Massenverteilung auf $\Omega$ beschreibt. Die \textbf{Masse} von $\Omega$ ist dann	
 	\[
 		M(\Omega) = \int_\Omega \rho(x, y) dx dy
@@ -111,7 +131,15 @@ Idee: Beziehung Linienintegral und Flächenintegral.
 		x_s &= \frac{1}{M} \int_\Omega x \rho (x, y) dx dy\\
 		y_s &= \frac{1}{M} \int_\Omega y \rho (x, y) dx dy
 	\end{align*} 
-	Analog berechnen sich Masse, Schwerpunkt von dreidimensionalen Gebieten.
+	Analog berechnen sich Masse, Schwerpunkt von dreidimensionalen Gebieten.\\
+	Oberfläche: Consider the continuous function
+	\(f:[a,b] \times [c,d] \rightarrow \mathbb{R}\) which is \(C^1\) on
+	\(]a,b[\times]c,d[\). Let
+	\(\Gamma = \{(x,y,z) \in \mathbb{R}^3 : (x,y) \in [a,b]\times [c,d], z=f(x,y)\} \subset\mathbb{R^3}\)
+	be the graph of \(f\). This is a surface and should have an area, which
+	is given by
+	\(\int_a^b\int_c^d\sqrt{1+(\partial_xf(x,y))^2+(\partial_yf(x,y))^2}dxdy\)
+	Analogue formula for the length of the graph of a function $f:[a,b] \rightarrow \mathbb{R}$: $\int_a^b\sqrt{1+f'(x)^2}dx.$
 \end{Satz}
 \begin{Satz}{Satz von Stokes}{}
 	Sei $\vec{v} = (v_1, v_2, v_3)$ ein stetig differenzierbares Vektorfeld auf $\Omega \subset \R^3$ und $C \subset \Omega$ eine offene Fläche durch die geschlossene $C^1_{pw}$ Kurve $\gamma = \partial C$ berandet:

@@ -1,5 +1,51 @@
-\subsection{Integrationsregeln}
+\subsection{Das Riemann Integral}
 
+\begin{Rechenregeln}{Riemann Integral}{}
+    Das Riemann Integral über ein Quader $Q = [a_1,a_2] \times [a_2, b_2] \times \dots \times [a_n, b_n]$ wird mittel Partitionen Unter und Obersummen, wie im 1-Dimensionalen Fall definiert.
+    Das Untere und Obere Riemann Integral ist:
+    \[ 
+        \int_{Q} f(x) d \mu=\underline{I}(f):=\sup \left\{U_{f}(P) \mid P \in \mathcal{P}(Q)\right\}
+    \]
+        
+    \[
+        \left(\text{resp ., } \int_{Q} f(x) d \mu=\bar{I}(f):=\inf \left\{O_{f}(P) \mid P \in \mathcal{P}(Q)\right\}\right)    
+    \]
+    $f$ heisst integrierbar wenn, $\bar{I}(f) = \underline{I}(f)$
+\end{Rechenregeln}
+
+\begin{Satz}{Eigenschaften des Riemann Integrals}{}
+    \begin{enumerate}
+        \def\labelenumi{\arabic{enumi}.}
+        \item
+          \textbf{Compatibility:} If \textbf{\(n=1\)} and \(X=[a,b]\) with
+          \(a\leq b\), then \(\int_{[a,b]}f(x)dx=\int_a^bf(x)dx\).
+        \item
+          \textbf{Linearity:} If \(f\) and \(g\) are continuous on \(X\) and
+          \(a,b \in \mathbb{R}\), then
+          \(\int_X(af_1(x)+bf_2(x))dx = a\int_Xf_1(x)dx+b\int_Xf_2(x)dx\).
+        \item
+          \textbf{Positivity:} If \(f\leq g\), then
+          \(\int_Xf(x)dx\leq\int_Xg(x)dx\) and especially, if \(f \geq 0\), then
+          \(\int_Xf(x)dx \geq 0\). Moreover, if \(Y \subset X\) is compact and
+          \(f\geq 0\), then \(\int_Yf(x)dx\leq\int_Xf(x)dx\).
+        \item
+          \textbf{Upper bound and triangle inequality:} In particular, since
+          \(-|f|\leq f \leq |f|\), we have
+          \(\left| \int_Xf(x)dx \right| \leq \int_X|f(x)|dx\), and since
+          \(|f+g| \leq |f| + |g|\), we have
+          \(\left| \int_X(f(x)+g(x))dx \right| \leq \int_X|f(x)|dx + \int_X|g(x)|dx\).
+        \item
+          \textbf{Volume:} If \(f=1\), then the integral of \(f\) is the
+          \emph{volume} in \(\mathbb{R^n}\) of the set \(X\), and if \(f\geq 0\)
+          in general, the integral of \(f\) is the volume of the set
+          \(\{(x,y) \in X \times \mathbb{R} : 0 \leq y \leq f(x)\} \subset \mathbb{R}^{n+1}\).
+          In particular, if \(X\) is a bounded \emph{rectangle}, say
+          \(X = [a_1,b_1] \times ... \ \times [a_n, b_n] \subset \mathbb{R}^n\)
+          and if \(f=1\), then \(\int_Xdx=(b_n-a_n) \cdot\cdot\cdot(b_1-a_1)\).
+          We write $\text{Vol}(X)$
+        \end{enumerate}
+  
+\end{Satz}
 \begin{Satz}{Satz von Fubini}{}
     Reduzierung von mehrdimensionalen Integralen auf eine Dimension. Sei $f: [a,b] \times [c, d]$ stetig, dann gilt
     \[ \int_a^b dx \int_c^d f(x, y) dy = \int_c^d dy \int_a^b f(x, y) dx = \int\displaylimits_{[a,b] \times [c, d]} f(x, y) d\mu(x, y)   \]
@@ -13,7 +59,31 @@
     \textbf{Die Integrationsreihenfolge darf vertauscht werden.}
 \end{Satz}
 
-Alternative Schreibweise von $dx ~ dy$: $\mu(x, y)$, $\mu(x+y)$.
+\begin{Definition}{Vernachlässigbare Mengen}{}
+    \begin{enumerate}
+        \def\labelenumi{\arabic{enumi}.}
+        \item
+          Let \(1\leq m \leq n\) be an integer. A parameterised \(m\)-set in
+          \(\mathbb{R}^n\) is a continuous map
+          \(f:[a_1,b_1]\times ...\ \times[a_m,b_m] \rightarrow \mathbb{R}^n\)
+          which is \(C^1\) on \(]a_1, b_1[\ \times ... \times\ ]a_m,b_m[\).
+        \item
+          A subset \(B\subset \mathbb{R}^n\) is negligible if there exists an
+          integer \(k \geq 0\) and parameterised \(m_i\)-sets
+          \(f_i:X_1 \rightarrow \mathbb{R}^n\), with \(1\leq i \leq k\) and
+          \(m_i < n\), such that \(X\subset f_1(X_1) \cup ...\ \cup f_k(X_k)\) .
+        \item Satz: Wenn $X$ vernachlässigbar ist gilt:
+            $\int_X f(x) dx = 0$
+    \end{enumerate}
+\end{Definition}
+\begin{Definition}{Uneingentliche Integrale}{}
+    Sei $X$ nicht kompakt. Und $X_k$ eine Reihe von kompakten Mengen sodass $X_k \subset X_{k+1}$ und
+    $\cup_{k = 1}^{\infty} = X$. Dann konvergiert $\int_X f dx$ wenn
+    \[
+        \int_X f dx = \Lim{k \to \infty}{\int_X f dx}
+    \]
+    Im 2-Dimensionalen Fall, wenn die Anwendung von Fubini gleich ist.
+\end{Definition}
 
 \begin{Satz}{Substitutionsregeln in einer Dimension}{}
     Sei $f$ eine Riemann-integrierbare Funktion. Für die Berechnung des Integrals

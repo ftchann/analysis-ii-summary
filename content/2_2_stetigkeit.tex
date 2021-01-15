@@ -10,18 +10,20 @@
     (f(x_n)) \rightarrow f(x)
     \]
 \end{Definition}
+\begin{Satz}{Stetige Funktionen}{}
+    Sei $f,g$ stetig: $f+g$, $f\cdot g$, $\frac{f}{g}$, $f \circ g$ stetig.
 
-Sei $f,g$ stetig: $f+g$, $f\cdot g$, $\frac{f}{g}$, $f \circ g$ stetig.
+    Falls $f$ stetig, gilt
 
-Falls $f$ stetig, gilt
+    \[
+        \lim_{x \rightarrow a} f(x) = f(\lim_{x\rightarrow a} x)
+    \]
 
-\[
-    \lim_{x \rightarrow a} f(x) = f(\lim_{x\rightarrow a} x)
-\]
+    $f$ diffbar $\Rightarrow$ $f$ stetig $\Rightarrow$ $f$ integrierbar
 
-$f$ diffbar $\Rightarrow$ $f$ stetig $\Rightarrow$ $f$ integrierbar
+    $f$ nicht integrierbar $\Rightarrow$ $f$ nicht stetig $\Rightarrow$ $f$ nicht diffbar.\\
+\end{Satz}
 
-$f$ nicht integrierbar $\Rightarrow$ $f$ nicht stetig $\Rightarrow$ $f$ nicht diffbar.\\
 
 \begin{Rezept}{Polarkoordinatentrick (Change of Variable, Coordinates)}{}
     Ziel: Zeige oder widerlege Stetigkeit. Seien $x=r\cos \varphi$, $y=r\sin \varphi$. Berechne

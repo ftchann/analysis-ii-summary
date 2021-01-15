@@ -1,6 +1,32 @@
 \subsection{Allgemein}
-\textbf{Beschränkt (bounded)} Falls $||x||$ beschränkt für alle $x \in M$.
+\begin{Definition}{Mengen}{}
+    Eine Menge $M \subseteq \mathbb{R}^n$ ist:\\
+    \textbf{Beschränkt (bounded)} Falls $||x||$ beschränkt für alle $x \in M$.
 
-\textbf{Geschlossen (closed)} Jede Folge $(x_n)$ mit $x_n \in M$ ist $\lim (x_n) \in M$.
+    \textbf{Geschlossen (closed)} Jede Folge $(x_n)$ mit $x_n \in M$ ist $\lim (x_n) \in M$.
 
-\textbf{Kompakt (compact)} Falls beschränkt und geschlossen.
+    \textbf{Kompakt (compact)} Falls beschränkt und geschlossen.
+
+    \textbf{Offen} M ist offen, wenn $\forall x \in X, \exists r > 0$, so dass $\{y \in \mathbb{R}^n | ||y - x|| < r\} = B_r(x) \subset X$.
+    Oder X ist offen $\iff$ das Komplement $Y = \{x \in \mathbb{R}^n: x \notin X\}$ geschlossen.
+
+\end{Definition}
+
+\begin{Satz}{Unkehrfunktion}{}
+    Sei $f:\mathbb{R}^n \rightarrow \mathbb{R}^m$ eine stetige Funktion. Für jede geschlossene Menge $Y \subset \mathbb{R}^m$. Ist $f^{-1}(Y)=\{x\in\mathbb{R}^n : f(x) \in Y\} \subset \mathbb{R}^n $ geschlossen.\\
+    Gleiches für offen.
+\end{Satz}
+
+\begin{Satz}{Min-Max}{}
+    Sei $X \subseteq \mathbb{R}^n$ nicht-leer und kompakt und $f: X \rightarrow y$ eine stetige Funktion. Dann ist $f$ beschränkt und hat ein Maximum und Minimum in $f(X)$. 
+\end{Satz}
+
+\begin{Definition}{Norm}{}
+    Die Norm $||x|| = \sqrt{x_1^2+...x_n^2}$ erfüllt:
+    \begin{enumerate}
+        \item $||x|| = 0 \Leftrightarrow x = 0$
+        \item $||tx|| = |t|||x||$ für alle $t \in \mathbb{R}$
+        \item $||x+y|| \leq ||x|| + ||y||$ (Dreiecksungleichung)
+    \end{enumerate}
+\end{Definition}
+

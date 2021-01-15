@@ -1,54 +1,51 @@
 \subsection{Partielle Ableitung (Partial Derivative)}
+\begin{Definition}{Partielle Ableitung}{}
+    $f$: $\R^n \rightarrow \R$ an Stelle $a$ nach $x_i$
 
-$f$: $\R^n \rightarrow \R$ an Stelle $a$ nach $x_i$
-
-\[
-    \lim_{h \rightarrow 0} \frac{f(a_1, ..., a_i + h, ..., a_n) - f(a_1, ..., a_i, ..., a_n)}{h} =: \frac{\partial f}{\partial x_i}(a)
-\]
+    \[
+        \lim_{h \rightarrow 0} \frac{f(a_1, ..., a_i + h, ..., a_n) - f(a_1, ..., a_i, ..., a_n)}{h} =: \frac{\partial f}{\partial x_i}(a)
+    \]
 
 \textbf{Wichtig}: Alle anderen $x_i$ werden als konstante behandelt bei Ableitung.
+\end{Definition}
 
-\subsubsection{Satz von Schwarz (Higher derivatives)}
+\begin{Definition}{Höhere Ableitung}{}
+    $f$ ist in der Klasse $C^1$ wenn $f$ differenzierbar ist und alle partiellen Ableitungen stetig sind.\\
+    $f$ ist in der Klasse $C^k$ wenn alle partiellen Ableitungen in der Klasse $C^{k-1}$ sind.
+\end{Definition}
 
-$f \in C^2$. Gilt nur für zwei und drei verschiedene Variablen. Beliebige Potenzen von $x_i$ und $x_j$ möglich.
+\begin{Satz}{Satz von Schwarz}{}
+    $f \in C^2$. Dann gilt:
 
-\[
-    \frac{\partial^2 f}{\partial x_i x_j} = \frac{\partial^2 f}{\partial x_j x_i} \forall i, j \in \{1, ..., n\}
-\]
+    \[
+        \frac{\partial^2 f}{\partial x_i x_j} = \frac{\partial^2 f}{\partial x_j x_i} \forall i, j \in \{1, ..., n\}
+    \]
+    Gleiches gilt for mehr Variablen.
+
+\end{Satz}
 
 
-\subsubsection{Gradient}
-
-\[
+\begin{Definition}{Gradient}{}
+    \[
     \nabla f =
         \begin{pmatrix}
             \frac{\partial f}{\partial x_1}\\
             \vdots\\
             \frac{\partial f}{\partial x_n}
         \end{pmatrix}
-\]
+    \]
 
-Gradient eines Skalarfeldes: Richtung: Richtung des steilten Anstiegs; Betrag: Stärke des Anstiegs.\\
+\end{Definition}
 
-\textbf{Regeln} ($n \in \mathbb{N}$, $c$ konstant, $u, v$ Vektoren):
-$\text{grad}(c) = 0$,
-$\text{grad}(c \cdot u) = c \cdot \text{grad}(u)$ (Linearität),
-$\text{grad}(u + v) = \text{grad}(u) + \text{grad}(u)$ (Addition),
-$\text{grad}(u \cdot v) = \text{grad}(u) \cdot \text{grad}(u)$
-(Produktregel),
-TODO andere gradienten regeln von der übungsstunde 5
-TODO Serie 5 2.1 senkrecht satz 
-$\text{grad}(u^n) = n \cdot u^{n-1} \cdot \text{grad}(u)$ ($n\neq 0$).
-
-\subsubsection{Richtungsableitung (Directional Derivative)}
-
-$f$ heisst an der Stelle $a$ in Richtung $u$ differenzierbar, falls der Grenzwert 
+\begin{Definition}{Richtungsableitung}{}
+    $f$ heisst an der Stelle $a$ in Richtung $u$ differenzierbar, falls der Grenzwert 
 	\[
 		\lim_{h\to0}\frac{f(a + hu) -f(a)}{h} =
 		\left.\frac{d}{dh}f(a+hu)\right|_{h = 0}
 		=: D_vf(a)
 	\]
 existiert. Ist $||u|| = 1$ (normiert), heisst dieser Grenzwert Richtungsableitung.
+\end{Definition}
 
 \begin{Rezept}{Richtungsableitung $D_uf(a)$ existiert:}{} Falls $t \mapsto f(a + tu)$ differenzierbar ist bei $t=0$, dann existiert $D_uf(a)$.\\
 
@@ -56,10 +53,10 @@ existiert. Ist $||u|| = 1$ (normiert), heisst dieser Grenzwert Richtungsableitun
 \end{Rezept}
 
 \begin{Rezept}{Richtungsableitung $D_u f(a)$}{}
-Falls $f$ in $a$ differenzierbar ist: Für $f$ in Richtung $u$ in Punkt $a$: 1) $u$ normieren: $\tilde{u} = \frac{u}{||u||}$ 2) Gradient $\nabla f(x)$ berechnen, dann:
+Falls $f$ in $a$ differenzierbar ist: Für $f$ in Richtung $u$ in Punkt $a$: 1) $u$ normieren: $\tilde{u} = \frac{u}{||u||}$ 2) Jakobi Matrix berechnen berechnen, dann:
 
 \[
-    D_u f(a) = \tilde{u} \underbrace{\cdot}_{\text{SP.}} \nabla f(a)
+    D_u f(a) = J_f(a) \cdot u
 \]
 \end{Rezept}
 
@@ -72,24 +69,6 @@ Falls $f$ in $a$ differenzierbar ist: Für $f$ in Richtung $u$ in Punkt $a$: 1) 
             \frac{\partial^2 f}{\partial x_n x_1}&\hdots&\frac{\partial^2 f}{\partial x_n^2}
         \end{pmatrix}
 \]
-\end{Definition}
-
-\begin{Definition}{Jakobimatrix}{}
-\[
-    f(x, y) =
-        \begin{pmatrix}
-            f_1(x, y)\\
-            \vdots\\
-            f_n(x, y)
-        \end{pmatrix}\ 
-    \mathbf{J_f}(x, y) =
-        \begin{pmatrix}
-                \frac{\partial f_1}{\partial x} & \frac{\partial f_1}{\partial y}\\
-                \vdots&\vdots\\
-            \frac{\partial f_n}{\partial x} & \frac{\partial f_n}{\partial y}
-        \end{pmatrix}
-\]
-Für die Kettenregel von Jakobimatrizen siehe ''generelle Kettenregel''.
 \end{Definition}
 
 \subsection{Taylorpolynome}
@@ -117,7 +96,15 @@ Für die Kettenregel von Jakobimatrizen siehe ''generelle Kettenregel''.
 \[
     T_2f(x) = f(x_0) + \nabla f(x_0)	 (x-x_0) + \frac{1}{2} (x-x_0)^\top \text{Hess}_f(x_0) (x-x_0) 
 \]
-
+\begin{Satz}{Taylorpolynom}{}
+    Sei $k > 1$ eine ganze Zahl, $X$ offen und $f \in C^k$. Für $x_0 \in X$ definieren wir $E_kf(x;x_0) = T_kf(x - x_0; x) + E_kf(x;x_0)$
+    dann gilt $
+    \displaystyle\lim_{x \rightarrow x_0 \atop x\neq x_0}\frac{E_kf(x;x_0)}{||x-x_0||^k} =0$ 
+\end{Satz}
+\begin{Definition}{Tangentialebene}{}
+    Sei $X \subseteq \mathbb{R}^n$ und $Y \subseteq \mathbb{R}^m$ differenzierbar. Sei $x_0 \in X$ und $u = df(x_0)$. Der Graph der affinen linearen Approximation
+    $g(x) = f(x_0) + u(x - x_0)$ von $\mathbb{R}^n$ nach $\mathbb{R}^m$ is der Tangentialraum an $x_0$ zum Graph von $f$.
+\end{Definition}
 \begin{Rezept}{Tangentialebene (Variante I)}{}
     Tangentialebene der Fläche $f(x, y)$ finden in Punkt $(x_0, y_0)$.
     
@@ -175,3 +162,20 @@ Für die Kettenregel von Jakobimatrizen siehe ''generelle Kettenregel''.
 \[ z = f(x_0, y_0) + \frac{\partial f}{\partial x}(x_0, y_0)\cdot(x-x_0) + \frac{\partial f}{\partial y}(x_0, y_0)\cdot(y-y_0) \]
 kann direkt umgeformt werden in die Normalform der Ebenengleichung.
 \end{Rezept}
+
+\begin{Rezept}{Varaiblenwechsel}{}
+    Sei $g: U \rightarrow X$ und $f: X \rightarrow \mathbb{R}$ und $h = f \circ g: U \rightarrow \mathbb{R}$\\
+    $
+    \partial_{y_1}h = \frac{\partial f}{\partial x_1}\frac{\partial g_1}{\partial y_1} + ... \ +  \frac{\partial f}{\partial x_n}\frac{\partial g_n}{\partial y_1}$
+\end{Rezept}
+
+\begin{Definition}{Varaiblenwechsel für Inverse}{}
+    Sei $X$ offen und $f$ eine differenzierbare Funktion. $f$ ist ein Varaiblenwechsel um $x_0$ wenn es ein Radius $r > 0$ gibt so dass,
+    $B = \{x \in \mathbb{R}^n: || x - x_0|| < r\}$ die Eigenschaft hat, dass das Bild $Y = f(B)$ ist offen in $\mathbb{R}^n$
+    und $g: Y \rightarrow B$ is differenzierbar mit $f \circ g = Id_Y$ und $g \circ f = Id_B$
+\end{Definition}
+
+\begin{Satz}{Inverse Funktion}{}
+    Sei $X$ offen und $f$ eine differenzierbare Funktion und $det(J_f(x_0) \neq 0)$, dann ist $f$ ein Variablenwechsel um $x_0$
+    und $J_g(f(x_0)) = J_f(x_0)^{-1}$, zusätzlich gilt $f \in C^k \implies g \in C^k$
+\end{Satz}

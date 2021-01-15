@@ -14,28 +14,6 @@ Intuition: Stärke der Änderung der Richtung der Vektoren in einem Vektorfeld.
 \end{Rezept}
 
 \subsection{Konservative Vektorfelder (= Potentialfelder)}
-\begin{Rezept}{Konservativität zeigen (mittels Integrabilitätsbedingungen)}{}
-Ein Vektorfeld $V: (x, y) \mapsto (f_1(x), f_2(y))$ ist konservativ (= ein Potentialfeld) wenn es \textbf{überall definiert
-und zusammenhängend} (für 2D: keine 'Löcher') ist und die \textbf{Integrabilitätsbedingungen} gelten:
-
-\begin{multicols}{2}
-Für $\R^2$:
-\[ \frac{\partial f_1}{\partial x_2} = \frac{\partial f_2}{\partial x_1} \]
-Für $\R^3$:
-\[ \frac{\partial f_1}{\partial x_2} =  \frac{\partial f_2}{\partial x_1}, 
-~~  \frac{\partial f_1}{\partial x_3} = \frac{\partial f_3}{\partial x_1},
-~~ \frac{\partial f_2}{\partial x_3} =  \frac{\partial f_3}{\partial x_2}
-\]
-Für $\R^n$:
-\[
-	\frac{\partial f_i}{\partial x_j} =  \frac{\partial f_j}{\partial x_i},
-	\quad
-	\forall i \neq j,
-	\quad
-	i, j \in \{1,...,n\}
-\]
-\end{multicols}
-\end{Rezept}
 
 \begin{Satz}{Wegintegrale für Potentialfelder}{}
 	Sei $\vec{v} : \Omega \subset \R^n \to \R^n$ ein Potentialfeld mit Potential $\Phi$. Dann gilt für jedes Wegintegrale entlang $\gamma$, dass
@@ -54,6 +32,5 @@ Für $\R^n$:
 		\item $\vec{v}$ ist ein Potentialfeld
 		\item Für alle geschlossene Kurven gilt $\oint \vec{v} \cdot d\vec{s} = 0$
 		\item Das Integral $\int_\gamma \vec{v} \cdot d\vec{s}$ ist unabhängig vom Weg
-		\item $\vec{v}$ erfüllt die Integrabilitätsbedingung auf $\Omega$. Für $\R^3$ gilt also $\nabla \times \vec{v} = 0$
 	\end{itemize}
 \end{Diverses}

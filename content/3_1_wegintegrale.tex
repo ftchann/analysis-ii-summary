@@ -8,7 +8,7 @@ jedes $f_i$ stetig, dann ist
 Für eine parametrisierte Kurve in $\R^n$, d.h.
 $\gamma : [a, b] \rightarrow \R^n$, s.d.
 \begin{enumerate}
-\item{ $\gamma$ stetig}
+\item{ $\gamma$ stückweise stetig}
 \item{2. $\exists t_0, \ldots, t_k$, ~ s.d. $t_0 = a < t_i < t_k = b$, ~~ s.d. ~
 $\gamma ~ | ~ ]t_i, t_{i-1}[ ~ \in C^1$}
 \end{enumerate}
@@ -46,3 +46,17 @@ $\gamma(a)$ und $\gamma(b)$.
 	\]
 	und ist unabhängig der gewählten Parametrisierung!
 \end{Rezept}
+
+\begin{Definition}{Vektorfeld}{}
+	Für $X\subset \mathbb{R}^n$, $f:X\rightarrow \mathbb{R}^n$ wird \textbf{Vektorfeld} genannt. 
+\end{Definition}
+
+\begin{Satz}{Orientierte Reparametriesierung}{}
+	Sei $\gamma:[a,b] \rightarrow \mathbb{R}^n$ eine parametrisierte Kurve und $\sigma:[c,d] \rightarrow \mathbb{R}^n$ eine orientierte Reparametriesierung
+	so dass $\sigma =\gamma \circ \varphi$, wobei 
+	$\varphi : [c,d] \rightarrow [a,b]$ stetig differenzierbar auf $
+	]a,b[$ ist und zudem streng monoton steigend und $\varphi(a) = c$ sowie $\varphi(b)=d$.\\
+
+	Sei $X$ das Bild von $\gamma$, oder ist das equivalente Bild von $\sigma$ und $f$ stetig.
+	Dann gilt \textcolor{red}{$\int_{\gamma}f(s)\cdot d\vec{s} = \int_{\sigma}f(s)\cdot d\vec{s}$}
+\end{Satz}

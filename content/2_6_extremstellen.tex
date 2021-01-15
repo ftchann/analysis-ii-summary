@@ -1,25 +1,23 @@
 \subsection{Extremstellen (Kritische Punkte)}
 
-\begin{Definition}[label=R1]{Kritische und reguläre Punkte}{}
-	\textbf{Fall $f: \R^n \to \R$}: Sei 	$f: \Omega \subset \R^n \to \R$ differenzierbar. Ein Punkt $p_0 \in \Omega$ heisst \textbf{kritischer Punkt von $f$}, falls $df(p_0)=0$. Ist der Punkt nicht kritisch, heisst er \textbf{regulär}.\\
-	
-	\textbf{Fall $f: \R^n \to \R^m$}: Sei $f: \Omega \subset \R^n \to \R^m$ differenzierbar. Wir wissen, dass $df(x_0)$ eine lineare Abbildung ist.
-	Diese lässt sich mit einer $m\times n$-Matrix darstellen. Der \textbf{Rang} der Matrix beschreibt die Dimension des Bildes.
-	Für eine $m \times n$ Matrix $A$ gilt \[\text{Rang}(A) \leq \min(m, n)\] Ein Punkt $p_0 \in \Omega$ heisst \textbf{regulär},
-	wenn die Matrix $df(x_0)$ einen maximalen Rang besitzt. Sonst heisst $p_0$ kritisch.
-	Ein kritischer Punkt heisst \textbf{degeneriert}, wenn an dieser Stelle für die Hesse-Matrix gilt:
-	\[\det(H_f(p_0)) \neq 0\]
-	Ansonsten heisst der Punkt \textbf{nicht-degeneriert}.
-\end{Definition}
-
-\begin{Satz}{Extremwerte in einer Variable}{}
-	Sei $f: \Omega \subset \R \to \R$, $f \in C^2$ und $x_0 \in \Omega$ ein kritischer Punkt (d. h. $f'(x_0) = 0$), dann gilt
-	\begin{itemize}
-		\item $x_0$ ist ein Minimum, falls $f''(x_0) > 0$,
-		\item $x_0$ ist ein Maximum, falls $f''(x_0) < 0$,
-		\item $x_0$ ist ein Sattelpunkt, falls $f''(x_0) = 0$
-	\end{itemize}
+\begin{Satz}{Extremalstellen}{}
+	Sei $X$ offen und $f:X\rightarrow \mathbb{R}$ Wenn für $x_0$\\
+	$f(y) \le f(x_0)$ für alle $y$ in der Nähe von $x_0$ \textbf{(lokales Maximum an $x_0$)}\\
+	$f(y) \ge f(x_0)$ für alle $y$ in der Nähe von $x_0$ \textbf{(lokales Minimum an $x_0$)}\\
+	Dann $df(x_0) = 0$, $\nabla f(x_0)=0$ oder $\partial_{x_i}f(x_0) = 0$ für alle $1 \leq i \leq n$.
 \end{Satz}
+
+\begin{Definition}[label=R1]{Kritische und reguläre Punkte}{}
+	Sei $f: \Omega \subset \R^n \to \R$ differenzierbar. Ein Punkt $p_0 \in \Omega$ heisst \textbf{kritischer Punkt von $f$}, falls $df(p_0)=0$. Ist der Punkt nicht kritisch, heisst er \textbf{regulär}.\\
+\end{Definition}
+\begin{Satz}{}{}
+	Wenn $f$ auf einer kompakten Menge $\bar{X} = X \cup B$ mit $X$ offen und $B$ die Grenzen. Dann sind die Maximas und Minimas ein kritischer Punkt oder auf den Grenzen von $f$.
+\end{Satz}
+
+\begin{Definition}{Degenerierte Punkte}{}
+	Sei $X$ offen und $f:X\rightarrow \mathbb{R}$ in der Klasse $C^2$. Ein kritischer Punkt $x_0$ ist
+	nicht-degeneriert wenn die Hessematrix keine Nulldeterminante hat.
+\end{Definition}
 
 \begin{Satz}{Extremwerte in mehreren Variablen (Corollary 3.8.7)}{}
 	Sei $X\subset \R^n$ offen und $f: X \rightarrow \R \in C^2$. ~~
@@ -35,30 +33,6 @@
 \begin{Rezept}{Eigenwerte finden}{}
 	Charakteristisches Polynom mittels $\det (A-\lambda I)$ berechnen. Nullstellen des Polynoms sind die Eigenwerte.
 \end{Rezept}
-
-\begin{Satz}{Definitheit für symmetrische Hesse-Matrizen (Remark 3.8.8)}{}
-\begin{center}Für eine \textbf{symmetrische} Matrix gilt\end{center}
-\[ A = \begin{pmatrix}
-         a & b\\
-         b & d
-       \end{pmatrix} \]
-\begin{align*}
-\textbf{positiv definit} & \Longleftrightarrow a > 0, ~~ ad-b^2>0\\
-\textbf{negativ definit} & \Longleftrightarrow a < 0, ~~ ad-b^2>0\\
-\textbf{indefinit} & \Longleftrightarrow ad-b^2 < 0
-\end{align*}
-
-
-\[ A = \begin{pmatrix}
-         a & b & c\\
-         b & e & f\\
-         c & f & i\\
-       \end{pmatrix} \]
-\begin{align*}
-\textbf{positiv definit} & \Longleftrightarrow a > 0, ~~ ae-b^2>0, ~~ \det \; A > 0\\
-\end{align*}
-
-\end{Satz}
 
 \begin{Satz}{Eigenwert-Kriterium}{}
 	Seien $\lambda_1, ..., \lambda_n$ die Eigenwerte einer reellen, symmetrischen $n \times n$ Matrix $A$. Dann gilt
