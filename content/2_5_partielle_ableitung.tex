@@ -34,6 +34,7 @@
             \frac{\partial f}{\partial x_n}
         \end{pmatrix}
     \]
+    Gradient eines Skalarfeldes: Richtung des steilsten Anstiegs; Betrag: Stärke des Anstiegs.
 
 \end{Definition}
 
@@ -56,7 +57,7 @@ existiert. Ist $||u|| = 1$ (normiert), heisst dieser Grenzwert Richtungsableitun
 Falls $f$ in $a$ differenzierbar ist: Für $f$ in Richtung $u$ in Punkt $a$: 1) $u$ normieren: $\tilde{u} = \frac{u}{||u||}$ 2) Jakobi Matrix berechnen berechnen, dann:
 
 \[
-    D_u f(a) = J_f(a) \cdot u
+    D_u f(a) = J_f(a) \cdot u = <\nabla f, u> 
 \]
 \end{Rezept}
 
@@ -163,13 +164,13 @@ Falls $f$ in $a$ differenzierbar ist: Für $f$ in Richtung $u$ in Punkt $a$: 1) 
 kann direkt umgeformt werden in die Normalform der Ebenengleichung.
 \end{Rezept}
 
-\begin{Rezept}{Varaiblenwechsel}{}
+\begin{Rezept}{Variablenwechsel}{}
     Sei $g: U \rightarrow X$ und $f: X \rightarrow \mathbb{R}$ und $h = f \circ g: U \rightarrow \mathbb{R}$\\
     $
     \partial_{y_1}h = \frac{\partial f}{\partial x_1}\frac{\partial g_1}{\partial y_1} + ... \ +  \frac{\partial f}{\partial x_n}\frac{\partial g_n}{\partial y_1}$
 \end{Rezept}
 
-\begin{Definition}{Varaiblenwechsel für Inverse}{}
+\begin{Definition}{Variablenwechsel für Inverse}{}
     Sei $X$ offen und $f$ eine differenzierbare Funktion. $f$ ist ein Varaiblenwechsel um $x_0$ wenn es ein Radius $r > 0$ gibt so dass,
     $B = \{x \in \mathbb{R}^n: || x - x_0|| < r\}$ die Eigenschaft hat, dass das Bild $Y = f(B)$ ist offen in $\mathbb{R}^n$
     und $g: Y \rightarrow B$ is differenzierbar mit $f \circ g = Id_Y$ und $g \circ f = Id_B$

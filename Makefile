@@ -8,7 +8,7 @@ three:
 three-borderless:
 	mkdir -p out
 	pdflatex -interaction=nonstopmode -output-directory=/tmp lean.tex
-	pdfxup -fw 0 -x 3 -y 1 -m 4 -o out/three-borderless.pdf /tmp/lean.pdf
+	pdfxup -fw 0 -x 3 -y 1 -m 6 -o out/three-borderless.pdf /tmp/lean.pdf
 	mv out/three-borderless.pdf .
 # compile lean as 1 to 1
 cols:

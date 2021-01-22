@@ -1,9 +1,5 @@
 \section{Differentialgleichungen}
 
-\begin{Definition}{Differentialgleichung}{}
-    Eine \textbf{Differentialgleichung} ist eine Gleichung, in welcher eine unbekannte Funktion $y(x)$ einer oder mehreren Variablen und ihre Ableitung vorkommnt. Im Falle, dass $y$ eine auf dem Intervall $I \subset \R$ definierte Funktion ist \[y: I \subset \R \to \R,\] spricht man von einer \textbf{gewöhnlichen Differentialgleichung}.
-\end{Definition}
-
 \begin{Definition}{Ordnung, linear, homogen}{}
     Die \textbf{Ordnung} einer Gleichung ist die höchste vorkommende Ableitung. Bsp: $y''$ $\implies$ 2.\\
     
@@ -37,6 +33,25 @@
         + \underbrace{y_p(x)}_{\text{partikuläre Lösung}}
     \]
 \end{Satz}
+
+\begin{Rezept}{Reduktion der Ordnung}{}
+	Reduktion einer ODE mit Ordnung $k$ auf Ordnung 1:
+	Man definiere 
+	\begin{equation*}
+		f: \mathbb{R} \rightarrow \mathbb{R}^k \qquad x \longmapsto \begin{pmatrix} y(x) \\ y'(x)\\ \cdots \\ y^{(k)}(x)\end{pmatrix} \qquad
+		f'(x)= \begin{pmatrix} y'(x) \\ y''(x) \\ \cdots \\ \small{\text{original equation}} \\ \small{\text{solved for $y^{(k)}(m)$}}
+		\end{pmatrix}
+	\end{equation*}
+	
+	Für $k=3$ und $ \rom{1}: y''' = cy'' + by' + ay$:
+		\begin{equation*}
+		f'(x)= \underbrace{\begin{pmatrix}
+		0 & 1 & 0 \\ 0 & 0 & 1 \\ a & b & c
+		\end{pmatrix}}_{A(x)} \cdot \begin{pmatrix} y(x) \\ y'(x) \\ y''(x) 
+		\end{pmatrix} \qquad \rom{1}': f'(x) = A(x) \cdot f(x)
+		\end{equation*}
+\end{Rezept}
+	
 
 \begin{Rezept}{Separation der Variablen}{}
 	Diese Methode eignet sich für \textbf{Differentialgleichungen erster Ordnung} und ist die einfachste Methode.

@@ -7,7 +7,6 @@
 
 \includegraphics[width = 18em]{kreis}
 \includegraphics[width = 18em]{hyp}
-\includegraphics[width = 30em]{tan}
 
 \begin{Rechenregeln}{Rechenregeln Komplexe Zahlen}{}
     Imaginäre Einheit: \(i^{2} = -1\) \\
@@ -57,7 +56,7 @@
     \(\vert a + b \vert \le \vert a \vert + \vert b \vert\) \\
     \\
     \textbf{Potenzen:} \\
-    \(x = \sqrt[n]{a} 	\Leftrightarrow\ (x^{n}  = a \ \text{und} x \ \ge 0)\) \abstand
+    \(x = \sqrt[n]{a} 	\Leftrightarrow\ (x^{n}  = a \ \text{und } x \ \ge 0)\) \abstand
     \(\sqrt[n]{-a} = - \sqrt[n]{a}, \ a \ge 0\) \abstand
     \(a^{-n} = \frac{1}{a^{n}} = (\frac{1}{a})^{n}\) \abstand \(a^{\frac{1}{n}} = \sqrt[n]{a}\) \abstand \(\sqrt{ab} = \sqrt{a}\sqrt{b}\)\abstand \(a^{\frac{m}{n}} = \sqrt[n]{a^{m}}\) \abstand
     \( \sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}} \) \abstand \( a^{x} = e^{x \cdot \ln a}\) \abstand 
@@ -83,9 +82,11 @@
         \hline 
     \end{tabular}
     \begin{itemize}
+    \item $\sin(x \pm y) = \sin(x)\cos(y) \pm \cos(x)\sin(y)$
+    \item $\cos(x \pm y) = \cos(x)\cos(y) \mp \sin(x)\sin(y)$
     \item $\sin(x+y)\sin(x-y) = \cos^2(y) - \cos^2(x) = \sin^2(x) - \sin^2(y)$
     \item $\cos(x+y)\cos(x-y) = \cos^2(y) - \sin^2(x) = \cos^2(x) - \sin^2(y)$
-    \item $\sin{x}\cos{x} = \frac{1}{2}(\sin(x+y) + \sin(x-y))$ 
+    \item $\sin{x}\cos{y} = \frac{1}{2}(\sin(x+y) + \sin(x-y))$ 
     \item $\cos{x}\cos{y} = \frac{1}{2}(\cos(x+y) + \cos(x-y))$
     \item  $\sin{x}\sin{y} = \frac{1}{2}(\cos(x-y)-\cos(x+y))$
     \item $\cos(x)^2 + \sin(x)^2 = 1$
@@ -97,6 +98,8 @@
     \item $\tan(\frac{x}{2}) = \frac{1-\cos(x)}{\sin(x)} = \frac{\sin(x)}{1+\cos(x)}$ \abstand $\cot(\frac{x}{2}) = \frac{1+\cos(x)}{\sin(x)} = \frac{\sin(x)}{1-\cos(x)}$
     \item $\sin^2(x) = \frac{1-\cos(2x)}{2}$
     \abstand $\cos^2(x) = \frac{1+\cos(2x)}{2}$
+    \item $\sin^3(x) = \frac{3\sin(x) - \sin(3x)}{4}$ 
+    \abstand $\cos^3(x) = \frac{3\cos(x) + \cos(3x)}{4}$
     \item $\tan(\pi + x) = \tan(x)$
     \item $-\sin(-x) = \sin(x), \cos(-x) = \cos(x), \tan(-x) = -\tan(x)$
     \item Für alle $(a,b)\in \R^2$, sodass $a^2+b^2 = 1$, gibt es $x\in\R$, sodass $a = \cos(x)$, $b = \sin(x)$.
@@ -138,7 +141,7 @@
     \item \textbf{Partielle Integration:} $\int_a^b f'(x)\cdot g(x)dx = \left[f(x)g(x)\right]_a^b - \int_a^b f(x)g'(x)$
     \item \textbf{Substitution:} $\int_{\phi(a)}^{\phi(b)} f(x)dx = \int_a^b f(\phi(t))\phi '(t) dt$
     \item \textbf{$a+c, b+c \in I$} $\int_a^b f(t+c)dt = \int_{a+c}^{b+c} f(x)dx$
-    \item \textbf{$ca,cb\in I$: } $\int_a^b f(ct)dt = \frac{1}{c}f(x)dx$
+    \item \textbf{$ca,cb\in I$: } $\int_a^b f(ct)dt = \frac{1}{c}\int f(x)dx$
     \item \textbf{Logarithmus: }\;(f stetig diffbar) $\int\frac{f'(t)}{f(t)}dt = \log(|f(x)|)$, bzw. $\int_a^b\frac{f'(t)}{f(t)}dt = \log(f(|b|)) - \log(f(|a|))$
     \item \textbf{Partialbruch: }\\
      $\frac{2x^6-4x^5+5x^4-3x^3+x^2+3x}{(x-1)^3(x^2+1)^2} = \frac{A}{x-1}+\frac{B}{(x-1)^2}+\frac{C}{(x-1)^3}+\frac{Dx+E}{x^2+1}+\frac{Fx+G}{(x^2+1)^2}$
@@ -149,7 +152,6 @@
     \begin{itemize}
     \item $\lim_{x\to 0} \arctan(x) = 0$, $\lim_{x\to\infty} \arctan(x) = \frac{\pi}{2}$
     \item $\lim_{x\to 0} \tan(x) = 0$, $\lim_{x\to\infty} \tan(x) = \infty$, $\lim_{x\to\frac{\pi}{2}} \tan(x) = \infty$
-    \item $\lim_{x\to\infty} \cos(x) = [-1, 1]$ \abstand $\lim_{x\to\infty} \sin(x) = [-1, 1]$
     \item $\Lim{n \rightarrow \infty}{(1+\frac{x}{n})^{n}} = e^{x}$ \abstand $\Lim{n \rightarrow \infty}{(1+\frac{1}{n})^{n}} = \LimNI{(1+n)^{\frac{1}{n}}} = e$ 
     \item $\LimXO{\frac{a^{x}-1}{x}} = \ln(a)$ \abstand \(\LimXO\frac{\log_a(1+x)}{x} = \frac{1}{\ln(a)}\) \abstand \(\LimXO{\frac{1-\cos(x)}{x}} = 0\) 
     \item \( \LimXO{\frac{1-\cos(x)}{x^{2}}} = \frac{1}{2} \) \abstand \( \LimXO{\frac{\tan(x)}{x}} = 1\) \abstand \( \LimXO{\frac{\sin(x)}{x}} = 1 = \frac{x}{\sin(x)}\) 
@@ -169,9 +171,18 @@
         \item $\zeta(a) = \sum_{k=0}^{\infty} \frac{1}{k^{a}} \text{ist konvergent} \iff a>1$
         \item $\sum_{k=0}^{\infty} \frac{1}{k!} = 1+\frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + ... = e$
         \item $\sum_{k=0}^{\infty} \frac{(-1)^{k}}{k!} = 1 - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + ... = \frac{1}{e}$
+        \item $\frac{1}{1 \pm x} = 1 \mp x + x^2 \mp x^3 + x^4 \mp ...$
+        \item $\frac{1}{(1 \pm x)^2} = 1 \mp 2x + 3x^2 \mp 4x^3 + 5x^4 \mp ...$
+        \item $\sqrt{1 \pm x} = 1 \pm \frac{x}{2} - \frac{\scriptstyle{1\cdot 1}}{\scriptstyle{2 \cdot 4}}x^2 \pm \frac{\scriptstyle{1\cdot 1 \cdot 3}}{\scriptstyle{2 \cdot 4 \cdot 6}}x^3 - \frac{\scriptstyle{1 \cdot 1 \cdot 3 \cdot 5}}{\scriptstyle{2 \cdot 4 \cdot 6 \cdot 8}}x^4 \pm \scriptstyle\cdots$
         \item $\exp(x) = \sum_{n=0}^{\infty} \frac{x^{n}}{n!} = 1 + x + \frac{x^{2}}{2!} + \frac{x^{3}}{3!} + ....$
         \item $\sin(x) =  \sum_{n=0}^{\infty} (-1)^{n}\frac{x^{2n+1}}{(2n +1)!} = x - \frac{x^{3}}{3!} + \frac{x^{5}}{5!} - \frac{x^{7}}{7!} + ...$ 
         \item $\cos(x) =  \sum_{n=0}^{\infty} (-1)^{n}\frac{x^{2n}}{(2n)!} = 1 - \frac{x^{2}}{2!} + \frac{x^{4}}{4!} - \frac{x^{6}}{6!} + ...$ 
+        \item $\sinh(x) = \sum_{n=0}^{\infty} \frac{x^{2n+1}}{(2n+1)!} = x + \frac{x^3}{3!} + \frac{x^5}{5!} + ...$
+        \item $\cosh(x) = \sum_{n=0}^{\infty} \frac{x^{2n}}{(2n)!} = 1 + \frac{x^2}{2!} + \frac{x^4}{4!} + ...$
+        \item $\tan(x) = 1 + \frac{\phi^3}{3} + \frac{2\phi^5}{15} + ...$
+        \item $\tanh(z) = 1 \pmb{-} \frac{z^3}{3} \pmb{+} \frac{2z^5}{15} \pmb{-} ...$
+        \item $\ln(1+z) = \sum_{k=1}^{\infty} \frac{(-1)^{k+1}}{k}z^k = z - \frac{z^2}{2} + \frac{z^3}{3} + ...$
+        \item $(1+z)^\alpha = \sum_{k=0}^{\infty}  \binom{\alpha}{k} z^k = 1 + \alpha z + \frac{\alpha(\alpha - 1)}{2!} z ^ 2 + ...$
     \end{itemize}
 \end{Rechenregeln}
 
@@ -216,7 +227,7 @@
         $\frac{1}{1+x^2}$ & $\arctan x$ & $x\arctan x - \frac{1}{2}\log(1+x^2)$\\[0.5em]
         $\sinh(x)$ & $\cosh(x)$ & - \\[0.5em]
         $\cosh(x)$ & $\sinh(x)$ & -\\[0.5em]
-        $\frac{1}{cosh^2(x)}$ & $\tanh(x)$ & $\log(\cosh(x))$\\[1em]
+        $\frac{1}{\cosh^2(x)}$ & $\tanh(x)$ & $\log(\cosh(x))$\\[1em]
         $2 \sin(x)\cos(x)$ & $\sin^2(x)$ & $\frac{1}{2}(x-\sin(x)\cos(x))$ \\[.5em]
         $-2\sin(x)\cos(x)$ & $\cos^2(x)$ & $\frac{1}{2}(x+\sin(x)\cos(x))$ \\[.5em]
         $\frac{2 \sin(x)}{\cos^3(x)}$ & $\tan^2(x)$ & $\tan(x) - x$\\[.5em]
