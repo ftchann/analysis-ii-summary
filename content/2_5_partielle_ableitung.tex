@@ -43,7 +43,7 @@
 	\[
 		\lim_{h\to0}\frac{f(a + hu) -f(a)}{h} =
 		\left.\frac{d}{dh}f(a+hu)\right|_{h = 0}
-		=: D_vf(a)
+		=: D_vf(a) = J_f \cdot v
 	\]
 existiert. Ist $||u|| = 1$ (normiert), heisst dieser Grenzwert Richtungsableitung.
 \end{Definition}
@@ -103,7 +103,8 @@ Falls $f$ in $a$ differenzierbar ist: Für $f$ in Richtung $u$ in Punkt $a$: 1) 
     \displaystyle\lim_{x \rightarrow x_0 \atop x\neq x_0}\frac{E_kf(x;x_0)}{||x-x_0||^k} =0$ 
 \end{Satz}
 \begin{Definition}{Tangentialebene}{}
-    Sei $X \subseteq \mathbb{R}^n$ und $Y \subseteq \mathbb{R}^m$ differenzierbar. Sei $x_0 \in X$ und $u = df(x_0)$. Der Graph der affinen linearen Approximation
+    Sei $X \subseteq \mathbb{R}^n$ und $f: X \rightarrow \mathbb{R}^m$ differenzierbar.
+    Sei $x_0 \in X$ und $u = df(x_0)$. Der Graph der affinen linearen Approximation
     $g(x) = f(x_0) + u(x - x_0)$ von $\mathbb{R}^n$ nach $\mathbb{R}^m$ is der Tangentialraum an $x_0$ zum Graph von $f$.
 \end{Definition}
 \begin{Rezept}{Tangentialebene (Variante I)}{}

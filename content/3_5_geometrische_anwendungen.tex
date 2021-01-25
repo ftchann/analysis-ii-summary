@@ -85,10 +85,10 @@ Idee: Beziehung Linienintegral und Flächenintegral.
 
 \begin{Satz}{Green andere Formen}{}
 	\[
-	\int_X \int	div f dx dy = \int_{\partial X} f_0 d\vec n
+	\int_X \int	\text{div} f dx dy = \int_{\partial X} f_0 d\vec n
 	\]
 	\[
-		\int_X \int	curl f dx dy = \int_{\partial X} \vec f \vec ds
+		\int_X \int	\text{curl} f dx dy = \int_{\partial X} \vec f \vec ds
 	\]
 \end{Satz}
 
@@ -135,20 +135,20 @@ Idee: Beziehung Linienintegral und Flächenintegral.
 		y_s &= \frac{1}{M} \int_\Omega y \rho (x, y) dx dy
 	\end{align*} 
 	Analog berechnen sich Masse, Schwerpunkt von dreidimensionalen Gebieten.\\
-	Oberfläche: Consider the continuous function
-	\(f:[a,b] \times [c,d] \rightarrow \mathbb{R}\) which is \(C^1\) on
-	\(]a,b[\times]c,d[\). Let
-	\(\Gamma = \{(x,y,z) \in \mathbb{R}^3 : (x,y) \in [a,b]\times [c,d], z=f(x,y)\} \subset\mathbb{R^3}\)
-	be the graph of \(f\). This is a surface and should have an area, which
-	is given by
+	Oberfläche: Sei \(f:[a,b] \times [c,d] \rightarrow \mathbb{R}\) in \(C^1\). Sei
+	\(\Gamma = \{(x,y,z) \in \mathbb{R}^3 : (x,y) \in [a,b]\times [c,d], z=f(x,y)\} \subset\mathbb{R}^3\)
+	der Graph von \(f\). This ist eine Oberfläche und hat Fläche:
 	\(\int_a^b\int_c^d\sqrt{1+(\partial_xf(x,y))^2+(\partial_yf(x,y))^2}dxdy\)
-	Analogue formula for the length of the graph of a function $f:[a,b] \rightarrow \mathbb{R}$: $\int_a^b\sqrt{1+f'(x)^2}dx.$
+	Analog Formel für die Länge der Kurve einer Funktion $f:[a,b] \rightarrow \mathbb{R}$: $\int_a^b\sqrt{1+f'(x)^2}dx.$
 \end{Satz}
 \begin{Satz}{Satz von Stokes}{}
 	Sei $\vec{v} = (v_1, v_2, v_3)$ ein stetig differenzierbares Vektorfeld auf $\Omega \subset \R^3$ und $C \subset \Omega$ eine offene Fläche durch die geschlossene $C^1_{pw}$ Kurve $\gamma = \partial C$ berandet:
 	\[
 		\int_{\gamma=\partial C} \vec{v} \cdot d\vec{s} = 
-		\int_C (\vec \nabla \times \vec v) \cdot \vec n\ do
+		\int_C \text{rot}(\vec v) \cdot \vec n\ do
+	\]
+	\[
+		\text{curl}(\vec v) = \text{rot}(\vec v) = \nabla \crossproduct \vec v = \vek{\frac{\partial v_3}{\partial y} - \frac{\partial v_2}{\partial z} }{ \frac{\partial v_1}{\partial z} - \frac{\partial v_3}{\partial x} }{ \frac{\partial v_2}{\partial x} - \frac{\partial v_1}{\partial y} }	
 	\]
 	wobei $\vec n$ der nach aussen gerichtete Normalenvektor entlang $C$ und $do$ das zweidimensionale Integrationselement über die Fläche bezeichnen. Der Weg $\gamma$ muss positiv orientiert sein.	
 	
